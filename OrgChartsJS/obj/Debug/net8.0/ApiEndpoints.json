@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "OrgChartsJS.Controllers.OrgController",
+    "Method": "GetOrgData",
+    "RelativePath": "api/Org",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

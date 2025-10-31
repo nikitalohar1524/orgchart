@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Organization Chart";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!-- Chart Container -->
+<div id="tree" style="width:100%; height:90vh;"></div>
+
+<!-- OrgChart JS -->
+<script src="https://balkangraph.com/js/OrgChart.js"></script>
+
+<script>
+    // Fetch data from your API
+    fetch("/api/orgchart")
+        .then(res => res.json())
+        .then(data => {
+            // Create OrgChart
+            var chart = new OrgChart(document.getElementById("tree"), {
+                template: "olivia",
+                enableSearch: true,
+                nodeBinding: {
+                    field_0: "Name",
+                    field_1: "Title",
+                    img_0: "Img"
+                },
+                nodes: data.map(x => ({
+                    id: x.id,
+                    pid: x.pid,
+                    name: x.name,
+                    title: x.title,
+                    img: x.img
+                }))
+            });
+        })
+        .catch(err => console.error("Error loading org data:", err));
+</script>

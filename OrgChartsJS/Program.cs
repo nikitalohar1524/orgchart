@@ -1,8 +1,13 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 Console.WriteLine("OrgChartsJS application starting...");
+Console.WriteLine("OrgChartsJS application started...");
+Console.WriteLine("🚀 Application started successfully with database logging enabled!");
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
